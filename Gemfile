@@ -7,14 +7,20 @@ gem 'rails', '3.2.13'
 
 gem 'mysql2'
 
-gem 'bootstrap-sass', '2.1'
+#gem "paperclip", "~> 3.0"
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
+
+# gem 'bootstrap-sass', '2.1'
 
 gem 'bcrypt-ruby', '3.0.1'
 
 gem 'faker', '1.0.1'
 
+gem 'closure_tree'
+
 gem 'will_paginate', '3.0.3'
-gem 'bootstrap-will_paginate', '0.0.6'
+# gem 'bootstrap-will_paginate', '0.0.6'
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'

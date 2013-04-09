@@ -1,11 +1,30 @@
-<div class="center hero-unit">
-  <h1>Welcome to the Classifyme</h1>
+<!-- <div class="center hero-unit">
+  <h1>Welcome to the Weloco</h1>
 
   <h2>
     This is the home page for the
-    <a href="http://www.heraldsolutions.in/">Classifyme</a>
+    <a href="http://www.heraldsolutions.in/">Weloco</a>
     sample application.
   </h2>
 
   <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+</div> -->
+
+<div class="leftmenu">            
+    <ul>
+        <% for category in Category.all %>
+           <li><%= link_to category.name, '#' %></li>
+        <% end %>             	
+    </ul>                           
+</div>
+
+
+<div id = "imagaddiv">
+	<% for advertise in Advertisement.all %>
+	    <div class="adbox">
+        <%= image_tag "#{advertise.image}" %>
+        <h1><%= truncate(advertise.title, :length => 12) %> <span>€  <%= advertise.price %></span></h1> 
+        <p><%= truncate(advertise.values_xml, :length => 12) %></p>
+      </div>
+	<% end %>
 </div>

@@ -1,7 +1,69 @@
 <% provide(:title, "Sign in") %>
-<h1>Sign in</h1>
 
-<div class="row">
+<div id = "wrapper">
+  <div class = "poup">
+    <div class = "mijnadediv">
+      <div class = "logmeldiv">
+        <h1 id="logo"><%= link_to image_tag("logo.png"), home_path %></h1>
+        <%= link_to image_tag("close_button.png", :class => "closeicon"), '#' %>
+
+        <div class = "clearfix"></div>
+        <div class = "bluediv"></div>         
+
+        <div class = "formmeldiv">
+
+          <% flash.each do |key, value| %>
+              <div class="alert alert-<%= key %>"> <%= value %> </div>
+          <% end %> 
+          <div class = "contn">
+            <h1>Maak hier je eigen account aan</h1>            
+            <input type="text" id="Items_input" class="formdiv" autocomplete="off" readonly="readonly" tabindex="0" placeholder="E-mail adres">
+            <input type="submit" class="btorg" id=""  value="Account maken" name="Wijzig">
+            <div class="form2ndinpt"><input type="text" id="Items_input" class="formdiv" autocomplete="off" readonly="readonly" tabindex="0" placeholder="Wachtwoord"></div>
+          </div>
+          
+          <div class = "contn fortopmarg">
+            <h1>Login met je Weloco.com account</h1>
+            <%= form_for(:session, url: sessions_path) do |f| %>
+               
+              <%= f.text_field :email, class: "formdiv" , placeholder: "E-mail adres" %>                                        
+              <div class = "facbokdiv">
+                <div class="facbokcont">Login met jouw sociale netwerk</div>
+                <%= image_tag "faceboo_icon.png" %>  
+                <input type="text" id="Items_input" class="" autocomplete="off" readonly="readonly" tabindex="0" placeholder="Login met Facebook">            
+              </div>
+
+              <div class = "form2ndinpt">
+                <%= f.password_field :password, class: "formdiv", placeholder: "Wachtwoord" %>
+                <div class = "comenttext">Wachtwoord vergeten?</div>
+                <div class = "submdiv">
+                  <%= f.submit "Inloggen", class: "btorg" %>
+                  <%= f.submit "Annuleren", class: "submdiv" %>
+                </div>              
+              </div>
+            <% end %> 
+          </div>
+        </div>      
+      </div>
+    </div>
+    <div class = "mijnadediv2nd">
+      <div class = "mijabotdiv">
+        <div class = "mijbothome"><%= image_tag "homeicon.png" %>Homepagina</div>
+        <p>
+          Voor uw bescherming verloopt deze conversatie via onze server en 
+          worden e-mailadressen afgeschermd. Om bijvoorbeeld spam te
+          voorkomen en de veiligheid van handelen te vergroten, behoudt 
+          WELOCO zich het recht voor om verdachte conversaties te filteren 
+          en te staken.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <div class="row">
   <div class="span6 offset3">
     <%= form_for(:session, url: sessions_path) do |f| %>
 
@@ -16,4 +78,4 @@
 
     <p>New User? <%= link_to "Sign up now!", signup_path %></p>
   </div>
-</div>
+</div> -->

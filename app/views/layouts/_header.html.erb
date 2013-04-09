@@ -1,4 +1,75 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+  <div id="header">
+    <h1 id="logo">
+      <%= link_to image_tag('logo.png'), home_path %>
+    </h1>
+    <div class="social">
+      <%= image_tag "twitter.png" %>
+      <%= image_tag "in.png" %>
+      <%= image_tag "facebook.png" %>
+    </div>
+  </div>
+
+  <div class="headorng">
+
+    <%= image_tag "homeicon.png" %>
+
+    <div class="formdiv">
+
+      <input type="text" class="field" value="keywords here ..." title="keywords here ..." />
+
+      <label>
+        <select>
+          <option selected> Alle groepen </option>
+          <option>Short Option</option>
+          <option>This Is A Longer Option</option>
+        </select>
+      </label>
+
+      <input type="text" class="field narrow" value="9401HM" title="keywords here ..." />
+      <label>
+        <select class="small">
+          <option selected> Alle afstanden </option>
+          <option>Short Option</option>
+          <option>This Is A Longer Option</option>
+        </select>
+      </label>
+      <input type="text" class="field narrow" value="Zoek" title="keywords here ..." />
+    </div>
+
+    <div class="tabdiv">
+      <section class="tabs">
+
+        <ul class="tab-nav">
+          <li><a href="#">Bewaar pagina <%= image_tag "star-small-org.png" %> </a> </li>
+          <% if signed_in? %>
+            <li><%= link_to "Uitloggen", signout_path, method: "delete" %></li>
+          <% else %>
+            <li class="active"><%= link_to "Inloggen", signin_path %></li>
+          <% end %>                    
+          <!--<li><a href="#">Tab 3</a></li>-->
+        </ul>
+
+       </section>
+    </div>
+
+    <div class="blackmain">
+      <div class="blacktab">
+        <div class="tablack">Dieren en Toebehoren</div>
+        <div class="tablackbig">
+          <h1><%= image_tag "blue_arrow.png" %> <a href="#">Terug naar resultaten</a></h1>
+          <ul>
+            <li><a href="#" class="last active">Vogels</a></li>
+            <li><a href="#">Hokken en Kooien </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<!-- <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
       <%= link_to "Classifyme", root_path, id: "logo" %>
@@ -26,4 +97,4 @@
       </nav>
     </div>
   </div>
-</header>
+</header> -->

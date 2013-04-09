@@ -1,0 +1,51 @@
+<p>
+  <b>Title:</b>
+  <%= @advertisement.title %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @advertisement.price %>
+</p>
+
+<p>
+  <b>Advertisement status:</b>
+  <%= @advertisement.advertisement_status_id %>
+</p>
+
+<p>
+  <b>Advertisement Image:</b>
+  <%= image_tag @advertisement.image.url %>
+</p>
+
+
+<p>
+  <b>Values xml:</b>
+  <%= @advertisement.values_xml %>
+</p>
+
+
+<p>
+  <b>Paid:</b>
+  <%= @advertisement.paid %>
+</p>
+
+<p>
+  <b>Deleted:</b>
+  <%= @advertisement.deleted %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @advertisement.user_id %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @advertisement.category_id %>
+</p>
+
+<%= link_to 'Edit', edit_advertisement_path(@advertisement) %> |
+<%= link_to 'Back', advertisements_path %>
+
+

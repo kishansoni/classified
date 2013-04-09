@@ -1,0 +1,33 @@
+<h1>Listing advertisements</h1>
+
+<table>
+  <tr>
+    <th>Advertisement status</th>
+    <th>Values xml</th>
+    <th>Paid</th>
+    <th>Deleted</th>
+    <th>User</th>
+    <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @advertisements.each do |advertisement| %>
+  <tr>
+    <td><%= advertisement.advertisement_status_id %></td>
+    <td><%= advertisement.values_xml %></td>
+    <td><%= advertisement.paid %></td>
+    <td><%= advertisement.deleted %></td>
+    <td><%= advertisement.user_id %></td>
+    <td><%= advertisement.category_id %></td>
+    <td><%= link_to 'Show', advertisement %></td>
+    <td><%= link_to 'Edit', edit_advertisement_path(advertisement) %></td>
+    <td><%= link_to 'Destroy', advertisement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Advertisement', new_advertisement_path %>

@@ -1,12 +1,22 @@
 Classified::Application.routes.draw do
 
+  resources :advertisements
+
+
+  get "advertisements/new"
+
+  resources :categories
+
   resources :users
+
 
   resources :sessions, only: [:new, :create, :destroy]
 
   get "users/new"
 
   root to: 'static_pages#home'
+
+  match '/' => "static_pages#home", :as => :home
 
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
@@ -15,6 +25,8 @@ Classified::Application.routes.draw do
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
+
+
 
 
   # The priority is based upon order of creation:

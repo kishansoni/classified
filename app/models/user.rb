@@ -39,6 +39,8 @@ class User < ActiveRecord::Base
   # validates :city, presence: true, length: { maximum: 20 }
   # validates :zipcode, presence: true, length: { maximum: 10 }
 
+  has_many :advertisements
+
   private
 
   def create_remember_token

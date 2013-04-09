@@ -1,0 +1,59 @@
+<%= form_for @advertisement, :html => { :multipart => true } do |f| %>
+  <% if @advertisement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@advertisement.errors.count, "error") %> prohibited this advertisement from being saved:</h2>
+
+      <ul>
+      <% @advertisement.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :price %><br/>
+    <%= f.number_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :advertisement_status_id %><br />
+    <%= f.number_field :advertisement_status_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :values_xml %><br />
+    <%= f.text_area :values_xml %>
+  </div>
+
+  <div class="field">
+    <%= f.label :paid %><br />
+    <%= f.check_box :paid %>
+  </div>
+  <div class="field">
+    <%= f.label :deleted %><br />
+    <%= f.check_box :deleted %>
+  </div>
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => "Select" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
